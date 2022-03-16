@@ -8,32 +8,35 @@ import Feed from './components/Feed.js';
 //import './style.css' 
 
 const useStyles = makeStyles({
-    root:{
+    root: {
         display: 'flex',
         flexDirection: 'column'
     },
-    main:{
+    main: {
         height: '100vh',
-        display: 'flex',
-        width: '1280px',
-        margin: '0 auto'
+        padding: 24
     },
-    toolbar:{
+    toolbar: {
         minHeight: 64
     }
 })
 
-export default function Home(){
+export default function Home() {
     const classes = useStyles();
 
-    return(
-    <div className={classes.root}>
-        <Header />
-        <div className={classes.toolbar}></div>
-        <main className={classes.main}>
-            <Navbar/>
-            <Feed/>   
-         </main>
-    </div>
+    return (
+        <div className={classes.root}>
+            <Header />
+            <div className={classes.toolbar}></div>
+            <main className={classes.main}>
+                <Container maxWidth="md">
+                    <Box display="flex">
+                        <Navbar />
+                        <Feed />
+                    </Box>
+                </Container>
+
+            </main>
+        </div>
     )
 }
